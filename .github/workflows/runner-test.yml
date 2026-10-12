@@ -1,0 +1,24 @@
+
+name: BI Runner Connectivity Lab
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  runner-check:
+    runs-on: self-hosted
+    timeout-minutes: 5
+
+    steps:
+      - name: Verify runner
+        run: |
+          echo "Self-hosted runner is working"
+          echo "Operating system:"
+          uname -s
+          echo "Architecture:"
+          uname -m
+          echo "Python version:"
+          python3 --version
